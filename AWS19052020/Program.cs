@@ -30,7 +30,6 @@ namespace AWS19052020
                 MinConfidence = 77F
             };
             return image;
-
         }
 
         static void Main(string[] args)

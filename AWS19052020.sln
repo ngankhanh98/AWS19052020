@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWS19052020", "AWS19052020\AWS19052020.csproj", "{DFD33DFC-DBD9-4C25-9B84-269C41B21973}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aws", "aws\aws.csproj", "{4F7EC88A-11A6-4616-AE95-F20A1F012052}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DFD33DFC-DBD9-4C25-9B84-269C41B21973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DFD33DFC-DBD9-4C25-9B84-269C41B21973}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DFD33DFC-DBD9-4C25-9B84-269C41B21973}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DFD33DFC-DBD9-4C25-9B84-269C41B21973}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F7EC88A-11A6-4616-AE95-F20A1F012052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F7EC88A-11A6-4616-AE95-F20A1F012052}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F7EC88A-11A6-4616-AE95-F20A1F012052}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F7EC88A-11A6-4616-AE95-F20A1F012052}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
