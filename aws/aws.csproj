@@ -42,6 +42,9 @@
     <Reference Include="AWSSDK.Rekognition, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
       <HintPath>..\packages\AWSSDK.Rekognition.3.3.105.27\lib\net45\AWSSDK.Rekognition.dll</HintPath>
     </Reference>
+    <Reference Include="AWSSDK.Translate, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Translate.3.3.101.60\lib\net45\AWSSDK.Translate.dll</HintPath>
+    </Reference>
     <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
     </Reference>
@@ -97,6 +100,7 @@
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.Polly.3.3.103.92\analyzers\dotnet\cs\AWSSDK.Polly.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\AWSSDK.Rekognition.3.3.105.27\analyzers\dotnet\cs\AWSSDK.Rekognition.CodeAnalysis.dll" />
+    <Analyzer Include="..\packages\AWSSDK.Translate.3.3.101.60\analyzers\dotnet\cs\AWSSDK.Translate.CodeAnalysis.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

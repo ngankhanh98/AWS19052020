@@ -17,12 +17,15 @@ using System.Windows.Forms;
 using System.Media;
 using NAudio;
 using NAudio.Wave;
+using Amazon.Translate.Model;
+using Amazon.Translate;
+using Amazon;
 
 namespace aws
 {
     public partial class Form1 : Form
     {
-        private String sourceLocation, targetLocation;
+        private String sourceLocation, targetLocation, detectTextImgLocation;
         private String sourceAdultContent;
         
         public Form1()
@@ -127,7 +130,7 @@ namespace aws
             {
                 Text = txt_Text.Text,
                 OutputFormat = OutputFormat.Mp3,
-                VoiceId = VoiceId.Carla
+                VoiceId = VoiceId.Joey
             };
             var response = client.SynthesizeSpeech(request);
 
@@ -148,6 +151,45 @@ namespace aws
 
             waveOutDevice.Init(audioFileReader);
             waveOutDevice.Play();
+
+        }
+
+        private void btn_translate_Click(object sender, EventArgs e)
+        {
+            var accessKey = "ZHGHDaS6+s/WgJjY961PCgHbUzV+AcEDVJ5RirL3";
+            var secretKey = "yfh7nvlO{bp}";
+
+            var client = new AmazonTranslateClient(accessKey, secretKey, RegionEndpoint.APSoutheast1);
+
+            var request = new TranslateTextRequest
+            {
+                Text = txt_langSource.Text,
+                SourceLanguageCode = "en",
+                TargetLanguageCode = "vi"
+            };
+            var result = client.TranslateText(request);
+
+            txt_langTarget.Text = result.TranslatedText;
+        }
+
+        private void img_DetectTextImg_Click(object sender, EventArgs e)
+        {
+            detectTextImgLocation = LoadImage(sender, e, img_DetectTextImg);
+
+            var image = ToBytesStream(@"detectTextImgLocation");
+            var client = new AmazonRekognitionClient();
+            var request = new DetectTextRequest
+            {
+                Image = image
+            };
+
+            var response = client.DetectText(request);
+            txtDetectedText.Text= $"Found {response.TextDetections.Count} texts";
+
+            foreach (var text in response.TextDetections)
+            {
+                txtDetectedText.Text += $"- {text.DetectedText}\n";
+            }
 
         }
 

@@ -44,8 +44,18 @@
             this.btn_uploadAdultContent = new System.Windows.Forms.Button();
             this.img_adultContent = new System.Windows.Forms.PictureBox();
             this.tab_textToSpeech = new System.Windows.Forms.TabPage();
-            this.txt_Text = new System.Windows.Forms.RichTextBox();
             this.btn_speak = new System.Windows.Forms.Button();
+            this.txt_Text = new System.Windows.Forms.RichTextBox();
+            this.tabTranslate = new System.Windows.Forms.TabPage();
+            this.btn_translate = new System.Windows.Forms.Button();
+            this.txt_langSource = new System.Windows.Forms.RichTextBox();
+            this.txt_langTarget = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tabTxtInImg = new System.Windows.Forms.TabPage();
+            this.btn_detectText = new System.Windows.Forms.Button();
+            this.txtDetectedText = new System.Windows.Forms.RichTextBox();
+            this.img_DetectTextImg = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.img_source)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_target)).BeginInit();
             this.face_comparison.SuspendLayout();
@@ -53,6 +63,9 @@
             this.tabAdultContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_adultContent)).BeginInit();
             this.tab_textToSpeech.SuspendLayout();
+            this.tabTranslate.SuspendLayout();
+            this.tabTxtInImg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_DetectTextImg)).BeginInit();
             this.SuspendLayout();
             // 
             // img_source
@@ -150,6 +163,8 @@
             this.face_comparison.Controls.Add(this.tab_faceComparison);
             this.face_comparison.Controls.Add(this.tabAdultContent);
             this.face_comparison.Controls.Add(this.tab_textToSpeech);
+            this.face_comparison.Controls.Add(this.tabTranslate);
+            this.face_comparison.Controls.Add(this.tabTxtInImg);
             this.face_comparison.Font = new System.Drawing.Font("Helvetica Neue", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.face_comparison.Location = new System.Drawing.Point(21, 12);
             this.face_comparison.Name = "face_comparison";
@@ -247,15 +262,6 @@
             this.tab_textToSpeech.Text = "Text to Speech";
             this.tab_textToSpeech.UseVisualStyleBackColor = true;
             // 
-            // txt_Text
-            // 
-            this.txt_Text.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_Text.Location = new System.Drawing.Point(34, 57);
-            this.txt_Text.Name = "txt_Text";
-            this.txt_Text.Size = new System.Drawing.Size(1203, 501);
-            this.txt_Text.TabIndex = 9;
-            this.txt_Text.Text = "";
-            // 
             // btn_speak
             // 
             this.btn_speak.BackColor = System.Drawing.SystemColors.Highlight;
@@ -267,6 +273,119 @@
             this.btn_speak.Text = "Speak";
             this.btn_speak.UseVisualStyleBackColor = false;
             this.btn_speak.Click += new System.EventHandler(this.btn_speak_Click);
+            // 
+            // txt_Text
+            // 
+            this.txt_Text.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_Text.Location = new System.Drawing.Point(34, 57);
+            this.txt_Text.Name = "txt_Text";
+            this.txt_Text.Size = new System.Drawing.Size(1203, 501);
+            this.txt_Text.TabIndex = 9;
+            this.txt_Text.Text = "";
+            // 
+            // tabTranslate
+            // 
+            this.tabTranslate.Controls.Add(this.label2);
+            this.tabTranslate.Controls.Add(this.label1);
+            this.tabTranslate.Controls.Add(this.txt_langTarget);
+            this.tabTranslate.Controls.Add(this.txt_langSource);
+            this.tabTranslate.Controls.Add(this.btn_translate);
+            this.tabTranslate.Location = new System.Drawing.Point(4, 24);
+            this.tabTranslate.Name = "tabTranslate";
+            this.tabTranslate.Size = new System.Drawing.Size(1290, 660);
+            this.tabTranslate.TabIndex = 3;
+            this.tabTranslate.Text = "Translate";
+            this.tabTranslate.UseVisualStyleBackColor = true;
+            // 
+            // btn_translate
+            // 
+            this.btn_translate.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_translate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_translate.Location = new System.Drawing.Point(1137, 355);
+            this.btn_translate.Name = "btn_translate";
+            this.btn_translate.Size = new System.Drawing.Size(113, 30);
+            this.btn_translate.TabIndex = 2;
+            this.btn_translate.Text = "Dịch nghĩa";
+            this.btn_translate.UseVisualStyleBackColor = false;
+            this.btn_translate.Click += new System.EventHandler(this.btn_translate_Click);
+            // 
+            // txt_langSource
+            // 
+            this.txt_langSource.Location = new System.Drawing.Point(34, 57);
+            this.txt_langSource.Name = "txt_langSource";
+            this.txt_langSource.Size = new System.Drawing.Size(575, 268);
+            this.txt_langSource.TabIndex = 3;
+            this.txt_langSource.Text = "";
+            // 
+            // txt_langTarget
+            // 
+            this.txt_langTarget.Location = new System.Drawing.Point(675, 57);
+            this.txt_langTarget.Name = "txt_langTarget";
+            this.txt_langTarget.Size = new System.Drawing.Size(575, 268);
+            this.txt_langTarget.TabIndex = 4;
+            this.txt_langTarget.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 15);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "English";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(672, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 15);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Tiếng Việt";
+            // 
+            // tabTxtInImg
+            // 
+            this.tabTxtInImg.Controls.Add(this.btn_detectText);
+            this.tabTxtInImg.Controls.Add(this.txtDetectedText);
+            this.tabTxtInImg.Controls.Add(this.img_DetectTextImg);
+            this.tabTxtInImg.Location = new System.Drawing.Point(4, 24);
+            this.tabTxtInImg.Name = "tabTxtInImg";
+            this.tabTxtInImg.Size = new System.Drawing.Size(1290, 660);
+            this.tabTxtInImg.TabIndex = 4;
+            this.tabTxtInImg.Text = "Text in image";
+            this.tabTxtInImg.UseVisualStyleBackColor = true;
+            // 
+            // btn_detectText
+            // 
+            this.btn_detectText.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_detectText.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_detectText.Location = new System.Drawing.Point(1073, 601);
+            this.btn_detectText.Name = "btn_detectText";
+            this.btn_detectText.Size = new System.Drawing.Size(178, 30);
+            this.btn_detectText.TabIndex = 6;
+            this.btn_detectText.Text = "Detect Text in Image";
+            this.btn_detectText.UseVisualStyleBackColor = false;
+            // 
+            // txtDetectedText
+            // 
+            this.txtDetectedText.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtDetectedText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDetectedText.Location = new System.Drawing.Point(957, 51);
+            this.txtDetectedText.Name = "txtDetectedText";
+            this.txtDetectedText.Size = new System.Drawing.Size(294, 501);
+            this.txtDetectedText.TabIndex = 5;
+            this.txtDetectedText.Text = "";
+            // 
+            // img_DetectTextImg
+            // 
+            this.img_DetectTextImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.img_DetectTextImg.Location = new System.Drawing.Point(51, 51);
+            this.img_DetectTextImg.Name = "img_DetectTextImg";
+            this.img_DetectTextImg.Size = new System.Drawing.Size(883, 501);
+            this.img_DetectTextImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.img_DetectTextImg.TabIndex = 4;
+            this.img_DetectTextImg.TabStop = false;
+            this.img_DetectTextImg.Click += new System.EventHandler(this.img_DetectTextImg_Click);
             // 
             // Form1
             // 
@@ -285,6 +404,10 @@
             this.tabAdultContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.img_adultContent)).EndInit();
             this.tab_textToSpeech.ResumeLayout(false);
+            this.tabTranslate.ResumeLayout(false);
+            this.tabTranslate.PerformLayout();
+            this.tabTxtInImg.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.img_DetectTextImg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -309,6 +432,16 @@
         private System.Windows.Forms.TabPage tab_textToSpeech;
         private System.Windows.Forms.Button btn_speak;
         private System.Windows.Forms.RichTextBox txt_Text;
+        private System.Windows.Forms.TabPage tabTranslate;
+        private System.Windows.Forms.RichTextBox txt_langSource;
+        private System.Windows.Forms.Button btn_translate;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox txt_langTarget;
+        private System.Windows.Forms.TabPage tabTxtInImg;
+        private System.Windows.Forms.Button btn_detectText;
+        private System.Windows.Forms.RichTextBox txtDetectedText;
+        private System.Windows.Forms.PictureBox img_DetectTextImg;
     }
 }
 
