@@ -19,7 +19,7 @@ Open **.sln** in Visual Studio. To build, use <kbd>Ctrl</kbd> + <kbd>Shitf</kbd>
 - [x] Unsafe content detect: We have a picture and we want to know whether it contains any of the unsafe labels.
 - [x] Text to speech: We have a text, we want it to be read aloud.
 
-Video demo: [AWS: face detect, unsafe content detect, text to speech](https://youtu.be/6QEVMMItuns)
+Video demo: [AWS: face detect, unsafe content detect, text to speech](https://youtu.be/01FBHA2noMs)
 
 ## 🙏 Acknowledge
 The essential knowledge is provided by the lecturer, Mr. Quang.
