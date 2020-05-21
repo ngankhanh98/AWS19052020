@@ -47,15 +47,16 @@
             this.btn_speak = new System.Windows.Forms.Button();
             this.txt_Text = new System.Windows.Forms.RichTextBox();
             this.tabTranslate = new System.Windows.Forms.TabPage();
-            this.btn_translate = new System.Windows.Forms.Button();
-            this.txt_langSource = new System.Windows.Forms.RichTextBox();
-            this.txt_langTarget = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_langTarget = new System.Windows.Forms.RichTextBox();
+            this.txt_langSource = new System.Windows.Forms.RichTextBox();
+            this.btn_translate = new System.Windows.Forms.Button();
             this.tabTxtInImg = new System.Windows.Forms.TabPage();
             this.btn_detectText = new System.Windows.Forms.Button();
             this.txtDetectedText = new System.Windows.Forms.RichTextBox();
             this.img_DetectTextImg = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.img_source)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_target)).BeginInit();
             this.face_comparison.SuspendLayout();
@@ -297,6 +298,40 @@
             this.tabTranslate.Text = "Translate";
             this.tabTranslate.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(672, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 15);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Tiếng Việt";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 15);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "English";
+            // 
+            // txt_langTarget
+            // 
+            this.txt_langTarget.Location = new System.Drawing.Point(675, 57);
+            this.txt_langTarget.Name = "txt_langTarget";
+            this.txt_langTarget.Size = new System.Drawing.Size(575, 268);
+            this.txt_langTarget.TabIndex = 4;
+            this.txt_langTarget.Text = "";
+            // 
+            // txt_langSource
+            // 
+            this.txt_langSource.Location = new System.Drawing.Point(34, 57);
+            this.txt_langSource.Name = "txt_langSource";
+            this.txt_langSource.Size = new System.Drawing.Size(575, 268);
+            this.txt_langSource.TabIndex = 3;
+            this.txt_langSource.Text = "";
+            // 
             // btn_translate
             // 
             this.btn_translate.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -309,42 +344,9 @@
             this.btn_translate.UseVisualStyleBackColor = false;
             this.btn_translate.Click += new System.EventHandler(this.btn_translate_Click);
             // 
-            // txt_langSource
-            // 
-            this.txt_langSource.Location = new System.Drawing.Point(34, 57);
-            this.txt_langSource.Name = "txt_langSource";
-            this.txt_langSource.Size = new System.Drawing.Size(575, 268);
-            this.txt_langSource.TabIndex = 3;
-            this.txt_langSource.Text = "";
-            // 
-            // txt_langTarget
-            // 
-            this.txt_langTarget.Location = new System.Drawing.Point(675, 57);
-            this.txt_langTarget.Name = "txt_langTarget";
-            this.txt_langTarget.Size = new System.Drawing.Size(575, 268);
-            this.txt_langTarget.TabIndex = 4;
-            this.txt_langTarget.Text = "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 15);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "English";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(672, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 15);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Tiếng Việt";
-            // 
             // tabTxtInImg
             // 
+            this.tabTxtInImg.Controls.Add(this.button2);
             this.tabTxtInImg.Controls.Add(this.btn_detectText);
             this.tabTxtInImg.Controls.Add(this.txtDetectedText);
             this.tabTxtInImg.Controls.Add(this.img_DetectTextImg);
@@ -365,6 +367,7 @@
             this.btn_detectText.TabIndex = 6;
             this.btn_detectText.Text = "Detect Text in Image";
             this.btn_detectText.UseVisualStyleBackColor = false;
+            this.btn_detectText.Click += new System.EventHandler(this.btn_detectText_Click);
             // 
             // txtDetectedText
             // 
@@ -386,6 +389,18 @@
             this.img_DetectTextImg.TabIndex = 4;
             this.img_DetectTextImg.TabStop = false;
             this.img_DetectTextImg.Click += new System.EventHandler(this.img_DetectTextImg_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Location = new System.Drawing.Point(51, 601);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(80, 30);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Upload";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -442,6 +457,7 @@
         private System.Windows.Forms.Button btn_detectText;
         private System.Windows.Forms.RichTextBox txtDetectedText;
         private System.Windows.Forms.PictureBox img_DetectTextImg;
+        private System.Windows.Forms.Button button2;
     }
 }
 

@@ -156,8 +156,8 @@ namespace aws
 
         private void btn_translate_Click(object sender, EventArgs e)
         {
-            var accessKey = "ZHGHDaS6+s/WgJjY961PCgHbUzV+AcEDVJ5RirL3";
-            var secretKey = "yfh7nvlO{bp}";
+            var accessKey = "AKIASASJUZ22KX7S2CPS";
+            var secretKey = "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";
 
             var client = new AmazonTranslateClient(accessKey, secretKey, RegionEndpoint.APSoutheast1);
 
@@ -172,11 +172,16 @@ namespace aws
             txt_langTarget.Text = result.TranslatedText;
         }
 
-        private void img_DetectTextImg_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             detectTextImgLocation = LoadImage(sender, e, img_DetectTextImg);
+        }
 
-            var image = ToBytesStream(@"detectTextImgLocation");
+        private void btn_detectText_Click(object sender, EventArgs e)
+        {
+            var image = ToBytesStream($"{detectTextImgLocation}");
+            txtDetectedText.Text = "";
+
             var client = new AmazonRekognitionClient();
             var request = new DetectTextRequest
             {
@@ -184,13 +189,17 @@ namespace aws
             };
 
             var response = client.DetectText(request);
-            txtDetectedText.Text= $"Found {response.TextDetections.Count} texts";
+            txtDetectedText.Text = $"Found {response.TextDetections.Count} texts\n";
 
             foreach (var text in response.TextDetections)
             {
                 txtDetectedText.Text += $"- {text.DetectedText}\n";
             }
+        }
 
+        private void img_DetectTextImg_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void btn_source_Click(object sender, EventArgs e)
